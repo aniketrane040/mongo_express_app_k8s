@@ -15,17 +15,12 @@ Deployment on k8s:
 
 4. create mongo-express deployment : kubectl apply -f mongo-express.yaml
 
+5. create ingress : kubectl apply -f express-ingress.yaml
+
 ---------------------------------
 
 create ip for external service using minikube command :
 
--> minikube service mongo-express-service
+-> kubectl get ingress
 
-output :
-|-----------|-----------------------|-------------|---------------------------|
-| NAMESPACE |         NAME          | TARGET PORT |            URL            |
-|-----------|-----------------------|-------------|---------------------------|
-| default   | mongo-express-service |        8081 | http://192.168.64.2:30000 |
-|-----------|-----------------------|-------------|---------------------------|
-🎉  Opening service default/mongo-express-service in default browser...
-
+map ingress ip with our hostname (mongo-express.com) in /etc/hosts to work locally
